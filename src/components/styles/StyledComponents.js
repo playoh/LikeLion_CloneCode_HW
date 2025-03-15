@@ -1,11 +1,20 @@
+import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    min-height: 100vh;
+  }
+`;
 
 export const WrapContainer = styled.div`
   height: auto;
   min-height: 100%;
   padding-bottom: 200px;
 `; //페이지 전체를 위한 컨테이너!
-
 
 export const Container = styled.div`
   display: flex;
@@ -19,6 +28,13 @@ export const NoCenterHorizontal = styled.div`
   align-items: center;
   width: 100%;
 `; //왼쪽부터 정렬
+
+export const NoCenterHorizontalReverse = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  width: 100%;
+`; //오른쪽부터 정렬
 
 export const Vertical = styled.div`
   display: flex;
@@ -47,8 +63,14 @@ export const themeColors = {
   MAPCOLOR: {
     color: "#FFFFFF",
   },
-  TEXTCOLOR: {
+  DARKCOLOR: {
     color: "#000000",
+  },
+  DARKTEXTCOLOR: {
+    color: "#000000",
+  },
+  LIGHTTEXTCOLOR: {
+    color: "#FFFFFF"
   },
   FILTERCOLOR: {
     color: "#FE0100",
@@ -56,7 +78,7 @@ export const themeColors = {
   IMAGEHOVERCOLOR: {
     color: "#CCCCCC",
   },
-FTOCOLOR: {
+  FTCOLOR: {
     color: "#616161",
   },
 };
