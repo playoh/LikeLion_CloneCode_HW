@@ -1,0 +1,9 @@
+.footer{
+  margin-top: auto;
+}
+.Footer_Container{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  color: #000000;
+}
