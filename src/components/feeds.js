@@ -21,6 +21,7 @@ const BrightFeedBox = styled.div`
   width: auto;
   height: 5vh;
 `;
+
 const DarkFeedBox = styled.div`
   display: flex;
   align-items: center;

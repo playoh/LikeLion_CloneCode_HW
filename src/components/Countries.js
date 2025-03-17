@@ -64,8 +64,8 @@ const ConBtn = styled.button`
   border: none;
   align-items: center;
   justify-content: center;
-  width: 20%;
-  height: 4.5vh;
+  width: 200px;
+  height: 5vh;
   color: white;
   font-size: 20px;
   margin-top: 2vh;
@@ -80,9 +80,7 @@ const ConIcon = styled.div`
   display: flex;
   align-items:center;
   justify-content: center;
-  font-size: 120%;
-  width: 10%;
-  margin-left: 4%;
+  padding-left: 10px;
   `;
 
 function Countries(){
@@ -118,6 +116,7 @@ function Countries(){
         <ConText>France</ConText>
         <ConNum>1.5%</ConNum>
       </DarkFeedBox>
+
       <ConBtn>
         More Countries
         <ConIcon>

@@ -8,6 +8,7 @@ import RegionComponent from "../components/regions";
 import FeedsComponent from "../components/feeds";
 import GeneralStatComponent from "../components/GeneralComponent";
 import Countries from "../components/Countries";
+import RecentUsersComponent from "../components/RecentUsers";
 
 import { GlobalStyle } from "../components/styles/StyledComponents";
 
@@ -28,6 +29,7 @@ function Main() {
       <FeedsComponent />
       <GeneralStatComponent/>
       <Countries />
+      <RecentUsersComponent/>
       <FooterComponent />
     </>
   );
