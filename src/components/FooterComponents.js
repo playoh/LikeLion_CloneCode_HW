@@ -8,7 +8,6 @@ const Footer_NoCenterVertical = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  position:fixed;
   bottom: 0;
 `;
 const FooterText = styled.div`
