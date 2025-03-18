@@ -6,11 +6,6 @@ const NoCenterHorizontal = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  margin: 3vh;
-`;
-
-const SubTitleText = styled.div`
-  font-size: 24px;
 `;
 
 const MiniTitle = styled.div`
@@ -36,6 +31,10 @@ const PercentageColor = styled.div`
   height: 5vh;
 `;
 
+const SubTitleText = styled.div`
+  font-size: 24px;
+  padding: 1vh 0 1vh 0;
+`;
 
 function GeneralStatComponent(){
   return(

@@ -8,7 +8,6 @@ const Dashboard_NoCenterHorizontal = styled.div`
   align-items: center;
   width: 100%;
   gap: 1%;
-  margin: 5vh;
 `;
 
 const DashMainIcon = styled.img`

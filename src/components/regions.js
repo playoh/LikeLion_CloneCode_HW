@@ -7,12 +7,6 @@ const Region_NoCenterVertical = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  margin: 5vh;
-`;
-
-const SubTitleText = styled.div`
-  font-size: 24px;
-  padding: 3vh 0 2vh 0;
 `;
 
 const RegionImage = styled.img`
@@ -23,7 +17,6 @@ const RegionImage = styled.img`
 function region() {
   return(
     <Region_NoCenterVertical>
-      <SubTitleText>Regions</SubTitleText>
       <RegionImage src={regionImg} alt="regionImage"/>
     </Region_NoCenterVertical>
   );

@@ -10,7 +10,6 @@ const NoCenterVertical = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 3vh;
 `;
 
 const SubTitleText = styled.div`
