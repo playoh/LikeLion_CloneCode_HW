@@ -6,103 +6,103 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars,faXmark, faUsers, faBell, faEye, faCircleDot, faGem, faLandmark, faClockRotateLeft, faGear } from '@fortawesome/free-solid-svg-icons';
 
-const NoCenterHorizontalReverse = styled.div`
+const MenuBtn = styled.button`
   background-color: ${themeColors.DARKCOLOR.color};
-  display: flex;
-  position:fixed;
-  top: 0;
-  align-items: center;
-  flex-direction: row-reverse;
-  width: 100%;
-  height: 5vh;
+  color: white;
+  border: none;
+  cursor: pointer;
 `;
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-`;
-
-const MenuIcon = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: 120%;
-  width: 10%;
-`;
-
-const MenuList = styled.ul`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-const DesktopHeader = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const Text = styled.div`
-  display: flex;
-  align-items: start;
-`;
-
-const MobileMenu = styled.div`
-  position: fixed;
-  top: 5vh;
-  left: 0;
-  width: 100%;
-  display: flex;
+const MenuList = styled.div`
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   flex-direction: column;
   align-items: center;
-  padding: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  justify-content: start;
+`;
+const MenuTitleTop2 = styled.div`
+  background-color: ${(props) => props.backgroundColor};
+  color: ${(props) => props.color};
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  cursor: pointer;
+  &:hover{
+    background-color: ${(props) => props.hoverBackgroundColor};
+    color: ${(props) => props.hoverColor};
+`;
+
+const MenuTitle = styled.div`
+  display: flex;
+  align items: center;
+  font-size: 120%;
+  width: 80%;
+  background-color: #FFFFFF;
+  color: #000000;
+  cursor: pointer;
+  &:hover{
+    background-color: #CCCCCC;  
+  }
 `;
 
 
 function HeaderComponent(){
-  const [isMobile, setIsMobile] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const handleToggle = () => setMenuOpen((prev) => !prev);
+  const [isOpen,setIsOpen] = useState(false);
+  
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return(
-    <header>
-      <DesktopHeader>
-        <Text>Logo</Text>
-        {isMobile ? (
-          <MenuIcon onClick={handleToggle}>
-            <FontAwesomeIcon icon={faBars}/>
-          </MenuIcon>
-            ) : (
-              <MenuList>
-                <li>Close Menu</li>
-                <li>Overview</li>
-                <li>Views</li>
-                <li>Traffic</li>
-                <li>Geo</li>
-              </MenuList>
-            )}
-      </DesktopHeader>
-      {isMobile && menuOpen && (
-        <MobileMenu>
-          <MenuIcon onClick={handleToggle}>
-            <FontAwesomeIcon icon={faBars}/>
-          </MenuIcon>
-          <MenuList>
-              <li>Close Menu</li>
-              <li>Overview</li>
-              <li>Views</li>
-              <li>Traffic</li>
-              <li>Geo</li>
-            </MenuList>
-        </MobileMenu>
-      )}
-    </header>
+    <>
+      <MenuBtn onClick={toggleMenu}>
+        <FontAwesomeIcon icon={faBars} />
+        Menu
+      </MenuBtn>
+
+      <MenuList isOpen={isOpen}> 
+
+        <MenuTitleTop2 backgroundColor="#616161" color="white" hoverBackgroundColor="#000000" hoverColor="white" >
+          <FontAwesomeIcon icon={faXmark}/>
+          Close Menu
+        </MenuTitleTop2>
+        <MenuTitleTop2 backgroundColor="#2196F3" color="white" hoverBackgroundColor="#CCCCCC" hoverColor="black">
+          <FontAwesomeIcon icon={faUsers}/>
+          Overview
+        </MenuTitleTop2>
+
+        <MenuTitle>
+          <FontAwesomeIcon icon={faEye}/>
+          Views
+        </MenuTitle>
+        <MenuTitle>
+          <FontAwesomeIcon icon={faUsers}/>
+          Traffic
+        </MenuTitle>
+        <MenuTitle>
+          <FontAwesomeIcon icon={faCircleDot}/>
+          Geo
+        </MenuTitle>
+        <MenuTitle>
+          <FontAwesomeIcon icon={faGem}/>
+          Orders
+        </MenuTitle>
+        <MenuTitle>
+          <FontAwesomeIcon icon={faBell}/>
+          News
+        </MenuTitle>
+        <MenuTitle>
+          <FontAwesomeIcon icon={faLandmark}/>
+          General
+        </MenuTitle>
+        <MenuTitle>
+          <FontAwesomeIcon icon={faClockRotateLeft}/>
+          History
+        </MenuTitle>
+        <MenuTitle>
+          <FontAwesomeIcon icon={faGear}/>
+          Settings
+        </MenuTitle>
+      </MenuList>
+    </>
   );
 };
 
