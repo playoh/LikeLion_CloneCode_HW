@@ -5,15 +5,29 @@ import { themeColors } from "./styles/StyledComponents";
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: auto%;
   background-color: ${themeColors.FTCOLOR.color};
   color: ${themeColors.MAPCOLOR.color};
+  margin-left: 300px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+  }
 `; 
 const NoCenterHorizontal = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 85%;
   margin: 4vh;
+  
+  @media (max-width: 768px){
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+  }
 `;
 
 const HorizonLine = styled.div`
@@ -21,11 +35,20 @@ const HorizonLine = styled.div`
   border: none;
   border-bottom: 8px solid ${(props) => props.backgroundColor};
   font-size: 24px;
+  
+  @media (max-width: 768px){
+    font-size: 20px;
+    border-bottom: 5px solid ${(props) => props.backgroundColor};
+  }
 `;
 
 const LinesPadding = styled.div`
   padding: 1vh 0;
   font-size: 20px;
+  
+  @media (max-width: 768px){
+    font-size: 15px;
+  }
 `;
 
 function DSTComponent() {

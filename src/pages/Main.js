@@ -16,13 +16,20 @@ import { GlobalStyle } from "../components/styles/StyledComponents";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 100%;
 `;
 
-const SubTitleText = styled.div`
-  font-size: 24px;
-  padding: 1vh 3vh 1vh 3vh;
+const NoCenterHorizontal = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  @media (max-width: 768px){
+    flex-direction: column;
+  }
 `;
+
+
 
 function Main() {
   return (
@@ -33,14 +40,12 @@ function Main() {
 
       <Container>
         <Dashboard />
-        <SubTitleText>Regions</SubTitleText>
-        <RegionComponent />
-        <SubTitleText>Feeds</SubTitleText>  
-        <FeedsComponent />
+        <NoCenterHorizontal>
+          <RegionComponent />
+          <FeedsComponent />
+        </NoCenterHorizontal>
         <GeneralStatComponent/>
-        <SubTitleText>Countries</SubTitleText>
         <Countries />
-        <SubTitleText>Recent Users</SubTitleText>
         <RecentUsersComponent/>
       </Container>
       <DSTComponent />

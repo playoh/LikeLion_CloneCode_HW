@@ -12,6 +12,12 @@ const NoCenterHorizontal = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
+  margin-left: 310px;
+  padding: 16px;
+
+  @media (max-width: 768px){
+    margin-left: 0;
+  }
 `;
 
 const UserContainer = styled.div`
@@ -31,6 +37,10 @@ const UserBox = styled.div`
   color: ${themeColors.DARKCOLOR.color};
   background-color: #FFFFFF;
   border-bottom: 1px solid #DDDDDD;
+  
+  @media (max-width: 768px){
+    padding: 8px 16px;
+  }
 `;
 
 const UserIcon = styled.img`
@@ -47,9 +57,16 @@ const UserIcon = styled.img`
 const UserTotalBox = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
   width: 100%;
-  height: 7vh;
+  height: auto;
   color: ${themeColors.DARKCOLOR.color};
+
+  @media (max-width: 1000px){
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const UserCommitIcon = styled.img`
@@ -65,36 +82,61 @@ const UserCommentBox = styled.div`
   display: flex;
   flex-direction: column;
   width: auto;
-  height: 7vh;
   margin-left: 4%;
   font-size: 24px;
   color: ${themeColors.DARKCOLOR.color};
-`;
 
-const CommentDate = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-size: 16px;
-  color: #606060;
+  @media (max-width: 1000px){
+    margin-left: 0;
+    margin-top: 1vh;
+  }
 `;
 
 const CommentWord = styled.div`
   display: flex;
-  flex-direction: column;
   font-size: 20px;
-  width: auto;
+  width: 95%;
+  font-size: 20px;
+
+  @media (max-width: 768px){
+    font-size: 15px;
+  }
+`;
+
+const CommentDate = styled(CommentWord)`
+  display: flex;
+  font-size: 16px;
+  margin-bottom: 0;
+  color: #606060;
+
+  @media (max-width: 768px){
+    flex-direction: column;
+    font-size: 15px;
+  }
 `;
 
 const SubTitleText = styled.div`
   font-size: 24px;
-  padding: 3vh 0 2vh 0;
+  padding: 1vh 3vh 1vh 0;
+  margin-top: 2vh;
+
+  @media (max-width: 768px){
+    margin-left: 0;
+    margin-top: 2vh;
+  }
 `;
 
-
+const NameAndDate = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap; // 작은 화면 대응용!! 자동으로 아래로 넘어가게~
+`;
 function RecentUsers () {
   return (
     <>
       <NoCenterHorizontal>
+        <SubTitleText>Recent Users</SubTitleText>
         <UserContainer>
           <UserBox>
             <UserIcon src={Img1} alt="avator2"/>
@@ -110,15 +152,17 @@ function RecentUsers () {
           </UserBox>
         </UserContainer>
       </NoCenterHorizontal>
-
+  {/* ~~~~~~~~~~~~~~~~~ Comment부분 ~~~~~~~~~~~~~~ */}
       <NoCenterHorizontal>
         <SubTitleText>Recent Comments</SubTitleText>
 
         <UserTotalBox>
           <UserCommitIcon src={CommitImg1} alt="avator3" />
           <UserCommentBox>
-            John
-            <CommentDate>Sep 29, 2014, 9:12 PM</CommentDate>
+            <NameAndDate>
+              John
+              <CommentDate>Sep 29, 2014, 9:12 PM</CommentDate>
+            </NameAndDate>
             <CommentWord>
               Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </CommentWord>
@@ -128,8 +172,11 @@ function RecentUsers () {
         <UserTotalBox>
           <UserCommitIcon src={CommitImg2} alt="avator1" />
           <UserCommentBox >
-            Bo
-            <CommentDate>Sep 28, 2014, 10:15 PM</CommentDate>
+            <NameAndDate>
+              Bo
+              <CommentDate>Sep 28, 2014, 10:15 PM</CommentDate>
+            </NameAndDate>
+      
             <CommentWord>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</CommentWord>
           </UserCommentBox>
         </UserTotalBox>

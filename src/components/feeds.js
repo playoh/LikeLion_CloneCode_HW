@@ -10,6 +10,24 @@ const Feed_NoCenterVertical = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: 310px;
+  padding: 16px;
+  width: 100%;
+
+  @media (max-width: 768px){
+    margin-left: 0;
+  }
+`;
+
+const SubTitleText = styled.div`
+  font-size: 24px;
+  padding: 1vh 3vh 1vh 0;
+  margin-top: 2vh;
+
+  @media (max-width: 768px){
+    margin-left: 0;
+    margin-top: 2vh;
+  }
 `;
 
 const BrightFeedBox = styled.div`
@@ -18,7 +36,7 @@ const BrightFeedBox = styled.div`
   background-color: ${themeColors.MAPCOLOR.color};
   color: ${themeColors.DARKCOLOR.color};
   width: auto;
-  height: 5vh;
+  padding: 8px 8px;
   font-size: 18px;
 `;
 
@@ -28,7 +46,7 @@ const DarkFeedBox = styled.div`
   background-color: ${themeColors.MAINCOLOR.color};
   color: ${themeColors.DARKCOLOR.color};
   width: auto;
-  height: 5vh;
+  padding: 8px 8px;
   font-size: 18px;
 `;
 
@@ -45,18 +63,29 @@ const FeedText = styled.div`
   text-align: left;
   flex-grow: 4;
   margin-left: 2%;
+
+  @media (max-width: 768px){
+    font-size: 15px;
+  }
 `;
 
 const FeedNum = styled.div`
   display: flex;
   align-items: center;
   text-align: right;
-  margin-right: 10%;
+  margin-right: 9%;
+  
+  @media (max-width: 768px){
+    font-size: 15px;
+  }
 `;
 
 function feeds(){
   return(
     <Feed_NoCenterVertical>
+      
+      <SubTitleText>Feeds</SubTitleText>  
+
       <BrightFeedBox>
         <FeedIcon>
           <FontAwesomeIcon icon={faUser} color="blue"/>
