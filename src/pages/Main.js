@@ -8,26 +8,47 @@ import RegionComponent from "../components/regions";
 import FeedsComponent from "../components/feeds";
 import GeneralStatComponent from "../components/GeneralComponent";
 import Countries from "../components/Countries";
+import RecentUsersComponent from "../components/RecentUsers";
+import DSTComponent from "../components/DSTComponent";
 
 import { GlobalStyle } from "../components/styles/StyledComponents";
 
 const Container = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   width: 100%;
 `;
+
+const NoCenterHorizontal = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  @media (max-width: 768px){
+    flex-direction: column;
+  }
+`;
+
+
 
 function Main() {
   return (
     <>
       <GlobalStyle />
+
       <HeaderComponent />
-      <Dashboard />
-      <RegionComponent />  
-      <FeedsComponent />
-      <GeneralStatComponent/>
-      <Countries />
+
+      <Container>
+        <Dashboard />
+        <NoCenterHorizontal>
+          <RegionComponent />
+          <FeedsComponent />
+        </NoCenterHorizontal>
+        <GeneralStatComponent/>
+        <Countries />
+        <RecentUsersComponent/>
+      </Container>
+      <DSTComponent />
       <FooterComponent />
     </>
   );

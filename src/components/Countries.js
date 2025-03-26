@@ -10,14 +10,13 @@ const NoCenterVertical = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 3vh;
-`;
+  margin-left: 310px;
+  padding: 16px;
 
-const SubTitleText = styled.div`
-  font-size: 24px;
-  padding: 3vh 0 2vh 0;
+  @media (max-width: 768px){
+    margin-left: 0;
+  }
 `;
-
 
 const BrightFeedBox = styled.div`
   display: flex;
@@ -30,6 +29,10 @@ const BrightFeedBox = styled.div`
   &:hover{
     background-color: ${themeColors.IMAGEHOVERCOLOR.color};
   };
+
+  @media (max-width: 768px){
+    padding: 8px 8px;
+  }
 `;
 const DarkFeedBox = styled.div`
   display: flex;
@@ -42,6 +45,10 @@ const DarkFeedBox = styled.div`
   &:hover{
     background-color: ${themeColors.IMAGEHOVERCOLOR.color};
   };
+
+  @media (max-width: 768px){
+    padding: 8px 8px;
+  }
 `;
 
 const ConText = styled.div`
@@ -64,8 +71,8 @@ const ConBtn = styled.button`
   border: none;
   align-items: center;
   justify-content: center;
-  width: 20%;
-  height: 4.5vh;
+  width: 200px;
+  padding: 13px;
   color: white;
   font-size: 20px;
   margin-top: 2vh;
@@ -74,21 +81,36 @@ const ConBtn = styled.button`
     background-color: ${themeColors.IMAGEHOVERCOLOR.color};
     color: ${themeColors.DARKCOLOR.color};
   };
+  @media(max-width: 768px){
+    padding: 8px 16px;
+    font-size: 18px;
+  }
+`;
+
+const SubTitleText = styled.div`
+  font-size: 24px;
+  padding: 1vh 3vh 1vh 0;
+  margin-top: 2vh;
+
+  @media (max-width: 768px){
+    margin-left: 0;
+    margin-top: 2vh;
+  }
 `;
 
 const ConIcon = styled.div`
   display: flex;
   align-items:center;
   justify-content: center;
-  font-size: 120%;
-  width: 10%;
-  margin-left: 4%;
+  padding-left: 10px;
   `;
 
 function Countries(){
   return(
     <NoCenterVertical>
+      
       <SubTitleText>Countries</SubTitleText>
+
       <BrightFeedBox>
         <ConText>United States</ConText>
         <ConNum>65%</ConNum>
@@ -118,6 +140,7 @@ function Countries(){
         <ConText>France</ConText>
         <ConNum>1.5%</ConNum>
       </DarkFeedBox>
+
       <ConBtn>
         More Countries
         <ConIcon>

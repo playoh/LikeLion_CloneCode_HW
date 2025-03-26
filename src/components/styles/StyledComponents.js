@@ -7,6 +7,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    line-height: 1.5;
+    font-family: "Raleway", sans-serif;
   }
 `;
 

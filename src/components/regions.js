@@ -7,17 +7,31 @@ const Region_NoCenterVertical = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  margin: 5vh;
-`;
 
+  @media (min-width: 768px){
+    width: 33.3333%;
+  }
+`;
 const SubTitleText = styled.div`
   font-size: 24px;
-  padding: 3vh 0 2vh 0;
-`;
+  padding: 1vh 3vh 1vh 16px;
+  margin-top: 2vh;
+  margin-left: 310px;
 
+  @media (max-width: 768px){
+    margin-left: 0;
+    margin-top: 2vh;
+  }
+`;
 const RegionImage = styled.img`
-  width: 50%;
+  width: 100%;
   height: auto;
+  margin-left: 310px;
+  padding: 16px;
+
+  @media (max-width: 768px){
+    margin-left: 0;
+  }
 `;
 
 function region() {

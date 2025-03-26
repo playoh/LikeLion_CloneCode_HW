@@ -6,11 +6,12 @@ const NoCenterHorizontal = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  margin: 3vh;
-`;
+  margin-left: 310px;
+  padding: 16px;
 
-const SubTitleText = styled.div`
-  font-size: 24px;
+  @media (max-width: 768px){
+    margin-left: 0;
+  }
 `;
 
 const MiniTitle = styled.div`
@@ -34,8 +35,16 @@ const PercentageColor = styled.div`
   justify-content: center;
   color: white;
   height: 5vh;
+
+  @media (max-width: 768px){
+    padding: 8px 16px;
+  }
 `;
 
+const SubTitleText = styled.div`
+  font-size: 24px;
+  padding: 1vh 0 1vh 0;
+`;
 
 function GeneralStatComponent(){
   return(
@@ -48,7 +57,7 @@ function GeneralStatComponent(){
         </PercentageBox>
         <MiniTitle>New Users</MiniTitle>
         <PercentageBox>
-          <PercentageColor style={{backgroundColor:"#FF9800", width: "50%"}}>50%</PercentageColor>
+          <PercentageColor style={{backgroundColor:"#FF9800", width: "50%", color:"black"}}>50%</PercentageColor>
         </PercentageBox>
         <MiniTitle>Bounce Rate</MiniTitle>
         <PercentageBox>

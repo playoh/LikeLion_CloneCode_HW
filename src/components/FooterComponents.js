@@ -11,19 +11,34 @@ const Footer_NoCenterVertical = styled.div`
   bottom: 0;
 `;
 const FooterText = styled.div`
-  padding: 3%;
+  font-size: 24px;
+  margin-left: 326px;
+  margin-bottom: 16px;
+  margin-top: 20px;
   color: ${themeColors.DARKTEXTCOLOR.color};
+
+  @media (max-width: 768px){
+    margin-left: 26px;
+  }
 `;
+
+const FooterLink = styled(FooterText)`
+  font-size: 18px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+`;
+
 
 function FooterComponent () {
   return (
     <Footer_NoCenterVertical>
       <FooterText>
         FOOTER
-        <br />
+      </FooterText>
+      <FooterLink>  
         Powered by
         < a href="https://www.w3schools.com/w3css/default.asp"/>
-      </FooterText>
+      </FooterLink>
     </Footer_NoCenterVertical>
   );
 }
